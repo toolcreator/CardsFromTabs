@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      textarea.cardlist {
+        width: 5cm;
+        height: 8cm;
+        resize: none;
+      }
+    </style>
   </head>
   <body>
-    <button id="getCardsBtn">Grab cards!</button>
-    <p id="cardList"></p>
+    <table>
+      <tr>
+        <td>
+          <button id="getCardsBtn">Grab cards!</button>
+        </td>
+        <td>
+          <button id="copyBtn">Copy to clipboard</button>
+        </td>
+      </tr>
+    </table>
+    <textarea class="cardlist" id="cardListTxt" readonly="true" autofocus="true"></textarea>
     <script src="popup.js"></script>
   </body>
 </html>
