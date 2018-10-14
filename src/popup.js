@@ -21,12 +21,16 @@ getCardsBtn.onclick = function() {
   chrome.tabs.query(
     {
       "currentWindow": true,
-      "url": ["https://scryfall.com/card/*"]  
+      "url": ["https://scryfall.com/card/*", "https://edhrec.com/cards/*"]  
     },
     function(tabs) {
       var list = "";
       tabs.forEach(function(tab) {
-        list += tab.title.substring(0, tab.title.indexOf("\u00b7")).trim() + "\n";
+        if(tab.url.includes("scryfall")) {
+          list += tab.title.substring(0, tab.title.indexOf("\u00b7")).trim() + "\n";
+        } else if(tab.url.includes("edhrec")) {
+          list += tab.title.substring(tab.title.indexOf("-") + 1, tab.title.indexOf("(")).trim() + "\n";
+        }
       });
       cardListTxt.innerHTML = list;
       if(list.trim() != "") {
