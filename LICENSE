@@ -1,4 +1,3 @@
-<!--
 Copyright 2018 Ole Lübke
 
 Permission to use, copy, modify, and/or distribute this software
@@ -13,37 +12,3 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
 OF THIS SOFTWARE.
--->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Cards from Tabs</title>
-    <style>
-      textarea.cardlist {
-        width: 5cm;
-        height: 8cm;
-        resize: none;
-      }
-    </style>
-  </head>
-  <body>
-    <label>
-      <input type="checkbox" id="copyChk">
-      Copy to clipboard automatically
-    </label>
-    <table>
-      <tr>
-        <td>
-          <button id="getCardsBtn">Grab cards!</button>
-        </td>
-        <td>
-          <button id="copyBtn">Copy to clipboard</button>
-        </td>
-      </tr>
-    </table>
-    <textarea class="cardlist" id="cardListTxt" readonly autofocus></textarea>
-    <script src="popup.js"></script>
-  </body>
-</html>
