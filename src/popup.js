@@ -41,7 +41,13 @@ getCardsBtn.onclick = function() {
   chrome.tabs.query(
     {
       "currentWindow": true,
-      "url": ["https://scryfall.com/card/*", "https://edhrec.com/cards/*"]
+      "url": [
+        "https://scryfall.com/card/*"
+        ,"https://edhrec.com/cards/*"
+        ,"https://www.cardmarket.com/*/Magic/Products/Singles/*"
+        ,"https://tappedout.net/mtg-card/*"
+        ,"http://gatherer.wizards.com/Pages/Card/*"
+      ]
     },
     function(tabs) {
       var list = "";
@@ -52,6 +58,12 @@ getCardsBtn.onclick = function() {
         } else if(tab.url.includes("edhrec")) {
           list += tab.title.substring(
                     tab.title.indexOf("-") + 1, tab.title.indexOf("("))
+                  .trim() + "\n";
+        } else if(tab.url.includes("cardmarket")) {
+          list += tab.title.substring(0, tab.title.indexOf("|"))
+                  .trim() + "\n";
+        } else if(tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
+          list += tab.title.substring(0, tab.title.indexOf("("))
                   .trim() + "\n";
         }
       });
