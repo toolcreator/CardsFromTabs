@@ -47,6 +47,7 @@ getCardsBtn.onclick = function() {
         ,"https://www.cardmarket.com/*/Magic/Products/Singles/*"
         ,"https://tappedout.net/mtg-card/*"
         ,"http://gatherer.wizards.com/Pages/Card/*"
+        ,"https://www.mtg-forum.de/db/magiccard.php*"
       ]
     },
     function(tabs) {
@@ -64,6 +65,9 @@ getCardsBtn.onclick = function() {
                   .trim() + "\n";
         } else if(tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
           list += tab.title.substring(0, tab.title.indexOf("("))
+                  .trim() + "\n";
+        } else if(tab.url.includes("mtg-forum")) {
+          list += tab.title.substring(0, tab.title.indexOf("-"))
                   .trim() + "\n";
         }
       });
