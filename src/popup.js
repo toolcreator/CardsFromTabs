@@ -47,27 +47,31 @@ getCardsBtn.onclick = function () {
         , "https://tappedout.net/mtg-card/*"
         , "http://gatherer.wizards.com/Pages/Card/*"
         , "https://www.mtg-forum.de/db/magiccard.php*"
+        , "https://www.mtggoldfish.com/price/*/*"
       ]
     },
     function (tabs) {
       var list = "";
       tabs.forEach(function (tab) {
+        var re;
         if (tab.url.includes("scryfall")) {
-          list += tab.title.substring(0, tab.title.indexOf("\u00b7"))
-            .trim() + "\n";
+          re = /^(.+) \u00b7 .* Scryfall Magic: The Gathering Search$/
         } else if (tab.url.includes("edhrec")) {
-          list += tab.title.substring(
-            tab.title.indexOf("-") + 1, tab.title.indexOf("("))
-            .trim() + "\n";
+          re = /^EDHREC - (.+) \(.*\)$/
         } else if (tab.url.includes("cardmarket")) {
-          list += tab.title.substring(0, tab.title.indexOf("|"))
-            .trim() + "\n";
+          re = /^(.+) \| Cardmarket$/
         } else if (tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
-          list += tab.title.substring(0, tab.title.indexOf("("))
-            .trim() + "\n";
+          re = /^(.+) \(.*$/
         } else if (tab.url.includes("mtg-forum")) {
-          list += tab.title.substring(0, tab.title.indexOf("-"))
-            .trim() + "\n";
+          re = /^(.+) - Infos zur Magic: The Gathering Karte$/
+        } else if (tab.url.includes("mtggoldfish")) {
+          re = /^(.+),.*$/ // mtggoldfish removes special characters, e.g., , or ', from the card's name in the title!
+        }
+        var match = tab.title.match(re);
+        if (match) {
+          list += match[1].trim() + "\n";
+        } else {
+          alert("Error: Did not understand the card name in the tab with title" + tab.title);
         }
       });
       cardListTxt.innerHTML = list;
