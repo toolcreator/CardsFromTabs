@@ -63,7 +63,7 @@ getCardsBtn.onclick = function () {
         } else if (tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
           re = /^(.+) \(.*$/
         } else if (tab.url.includes("mtg-forum")) {
-          re = /^(.+) - Infos zur Magic: The Gathering Karte$/
+          re = /^(.+) \[.*\] - Magic: The Gathering Card$/
         } else if (tab.url.includes("mtggoldfish")) {
           re = /^(.+),.*$/ // mtggoldfish removes special characters, e.g., , or ', from the card's name in the title!
         }
