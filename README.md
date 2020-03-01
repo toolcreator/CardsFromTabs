@@ -1,6 +1,16 @@
 # CardsFromTabs
 A Chrome browser extension to get a list of all Magic: The Gathering cards opened in tabs
 
+## Supported sites
+- [Scryfall](https://scryfall.com)
+- [EDHREC](https://edhrec.com)
+- [Cardmarket](https://www.cardmarket.com)
+- [Tappedout](https://tappedout.net)
+- [Gatherer](https://gatherer.wizards.com)
+- [MTG Forum](https://www.mtg-forum.de)
+- [MTG Goldfish](https://www.mtggoldfish.com)
+- [MTG Salvation](https://www.mtgsalvation.com)
+
 ## Installation
 1. Download [**CardsFromTabs.zip**](https://github.com/toolcreator/CardsFromTabs/releases/) and unzip it to wherever
    you like, but remember where.

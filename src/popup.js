@@ -45,9 +45,10 @@ getCardsBtn.onclick = function () {
         , "https://edhrec.com/cards/*"
         , "https://www.cardmarket.com/*/Magic/Products/Singles/*"
         , "https://tappedout.net/mtg-card/*"
-        , "http://gatherer.wizards.com/Pages/Card/*"
+        , "https://gatherer.wizards.com/Pages/Card/*"
         , "https://www.mtg-forum.de/db/magiccard.php*"
         , "https://www.mtggoldfish.com/price/*/*"
+        , "https://www.mtgsalvation.com/cards/*/*"
       ]
     },
     function (tabs) {
@@ -66,6 +67,8 @@ getCardsBtn.onclick = function () {
           re = /^(.+) \[.*\] - Magic: The Gathering Card$/
         } else if (tab.url.includes("mtggoldfish")) {
           re = /^(.+),.*$/ // mtggoldfish removes special characters, e.g., , or ', from the card's name in the title!
+        } else if (tab.url.includes("mtgsalvation")) {
+          re = /^(.+) - .+ - Cards - MTG Salvation$/
         }
         var match = tab.title.match(re);
         if (match) {
