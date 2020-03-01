@@ -45,7 +45,7 @@ getCardsBtn.onclick = function () {
         , "https://edhrec.com/cards/*"
         , "https://www.cardmarket.com/*/Magic/Products/Singles/*"
         , "https://tappedout.net/mtg-card/*"
-        , "http://gatherer.wizards.com/Pages/Card/*"
+        , "https://gatherer.wizards.com/Pages/Card/*"
         , "https://www.mtg-forum.de/db/magiccard.php*"
         , "https://www.mtggoldfish.com/price/*/*"
         , "https://www.mtgsalvation.com/cards/*/*"
