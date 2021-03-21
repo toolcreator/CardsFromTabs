@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Ole Lübke
+ * Copyright (c) 2021 Ole Lübke
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
@@ -58,7 +58,7 @@ getCardsBtn.onclick = function () {
         if (tab.url.includes("scryfall")) {
           re = /^(.+) \u00b7 .* Scryfall Magic: The Gathering Search$/
         } else if (tab.url.includes("edhrec")) {
-          re = /^(.+) \(.*\) - EDHREC$/
+          re = /^(.+) \(Card\) | EDHREC$/
         } else if (tab.url.includes("cardmarket")) {
           re = /^(.+) \| Cardmarket$/
         } else if (tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
