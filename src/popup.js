@@ -49,6 +49,7 @@ getCardsBtn.onclick = function () {
         , "https://www.mtg-forum.de/db/magiccard.php*"
         , "https://www.mtggoldfish.com/price/*/*"
         , "https://www.mtgsalvation.com/cards/*/*"
+        , "https://www.moxfield.com/cards/*"
       ]
     },
     function (tabs) {
@@ -69,6 +70,8 @@ getCardsBtn.onclick = function () {
           re = /^(.+),.*$/ // mtggoldfish removes special characters, e.g., , or ', from the card's name in the title!
         } else if (tab.url.includes("mtgsalvation")) {
           re = /^(.+) - .+ - Cards - MTG Salvation$/
+        } else if (tab.url.includes("moxfield")) {
+          re = /^(.+) \/\/ Moxfield.*$/
         }
         var match = tab.title.match(re);
         if (match) {

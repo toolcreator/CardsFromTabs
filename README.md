@@ -12,6 +12,7 @@ A Chrome browser extension to get a list of all Magic: The Gathering cards opene
 - [MTG Forum](https://www.mtg-forum.de)
 - [MTG Goldfish](https://www.mtggoldfish.com)
 - [MTG Salvation](https://www.mtgsalvation.com)
+- [Moxfield](https://moxfield.com)
 
 ## Installation
 
