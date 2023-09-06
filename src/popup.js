@@ -61,7 +61,7 @@ getCardsBtn.onclick = function () {
         } else if (tab.url.includes("edhrec")) {
           re = /^(.+) \(Card\) | EDHREC$/
         } else if (tab.url.includes("cardmarket")) {
-          re = /^(.+) \| Cardmarket$/
+          re = /^(.+) \(.*$/
         } else if (tab.url.includes("tappedout") || tab.url.includes("gatherer")) {
           re = /^(.+) \(.*$/
         } else if (tab.url.includes("mtg-forum")) {
