@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Cards from Tabs",
-  "version": "0.4.1",
-  "browser_action": {
+  "version": "1.0.0",
+  "action": {
     "default_popup": "popup.html"
   },
   "permissions": [
