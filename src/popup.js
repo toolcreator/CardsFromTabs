@@ -57,7 +57,7 @@ getCardsBtn.onclick = function () {
       tabs.forEach(function (tab) {
         var re;
         if (tab.url.includes("scryfall")) {
-          re = /^(.+) \u00b7 .* Scryfall Magic: The Gathering Search$/
+          re = /^(.+) \u00b7 .* \u00b7 .*$/
         } else if (tab.url.includes("edhrec")) {
           re = /^(.+) \(Card\) | EDHREC$/
         } else if (tab.url.includes("cardmarket")) {
