@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Ole Lübke
+ * Copyright (c) 2018 - 2024 Ole Lübke
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
@@ -50,6 +50,7 @@ getCardsBtn.onclick = function () {
         , "https://www.mtggoldfish.com/price/*/*"
         , "https://www.mtgsalvation.com/cards/*/*"
         , "https://www.moxfield.com/cards/*"
+        , "https://cards.deckstats.net/magiccard.php?*"
       ]
     },
     function (tabs) {
@@ -72,6 +73,8 @@ getCardsBtn.onclick = function () {
           re = /^(.+) - .+ - Cards - MTG Salvation$/
         } else if (tab.url.includes("moxfield")) {
           re = /^(.+) \/\/ Moxfield.*$/
+        } else if (tab.url.includes("deckstats")) {
+          re = /^(.+) \[.*$/
         }
         var match = tab.title.match(re);
         if (match) {
